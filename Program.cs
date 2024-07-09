@@ -3,13 +3,21 @@ namespace RockPaperScissors
 {
     class Program
     {
+        // 열거형 타입 정의
+        enum enumChoice 
+        {
+            Rock = 1,
+            Paper = 2,
+            Scissors = 0
+        }
+
         static void Main(string[] args)
         {
 
             // 상수 선언
-            const int ROCK = 1;
+/*            const int ROCK = 1;
             const int PAPER = 2;
-            const int SCISSORS = 0;
+            const int SCISSORS = 0;*/
 
             Random random = new Random();
             // 0~2 사이의 랜덤 값
@@ -24,13 +32,13 @@ namespace RockPaperScissors
             // 내 입력 값
             switch(myChoice) 
             {
-                case SCISSORS:
+                case (int)enumChoice.Scissors:
                     Console.WriteLine("당신은 가위를 선택했습니다.");
                     break;
-                case ROCK:
+                case (int)enumChoice.Rock:
                     Console.WriteLine("당신은 바위를 선택했습니다.");
                     break;
-                case PAPER:
+                case (int)enumChoice.Paper:
                     Console.WriteLine("당신은 보를 선택했습니다.");
                     break;
             }
@@ -38,13 +46,13 @@ namespace RockPaperScissors
             // 컴퓨터 입력 값
             switch(aiChoice)
             {
-                case SCISSORS:
+                case (int)enumChoice.Scissors:
                     Console.WriteLine("컴퓨터는 가위를 선택했습니다.");
                     break;
-                case ROCK:
+                case (int)enumChoice.Rock:
                     Console.WriteLine("컴퓨터는 바위를 선택했습니다.");
-                    break; 
-                case PAPER:
+                    break;
+                case (int)enumChoice.Paper:
                     Console.WriteLine("컴퓨터는 보를 선택했습니다.");
                     break;
             }
@@ -92,13 +100,13 @@ namespace RockPaperScissors
             if (myChoice == aiChoice)
             {
                 Console.WriteLine("무승부입니다.");
-            } else if (myChoice == SCISSORS && aiChoice == PAPER)
+            } else if (myChoice == (int)enumChoice.Scissors && aiChoice == (int)enumChoice.Paper)
             {
                 Console.WriteLine("당신의 승리입니다.");
-            } else if (myChoice == ROCK && aiChoice == SCISSORS)
+            } else if (myChoice == (int)enumChoice.Rock && aiChoice == (int)enumChoice.Scissors)
             {
                 Console.WriteLine("당신의 승리입니다.");
-            } else if (myChoice == PAPER && aiChoice == ROCK)
+            } else if (myChoice == (int)enumChoice.Paper && aiChoice == (int)enumChoice.Rock)
             {
                 Console.WriteLine("당신의 승리입니다.");
             } else
