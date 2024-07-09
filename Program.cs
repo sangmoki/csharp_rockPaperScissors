@@ -5,6 +5,12 @@ namespace RockPaperScissors
     {
         static void Main(string[] args)
         {
+
+            // 상수 선언
+            const int ROCK = 1;
+            const int PAPER = 2;
+            const int SCISSORS = 0;
+
             Random random = new Random();
             // 0~2 사이의 랜덤 값
             // 0: 가위, 1: 바위, 2: 보
@@ -18,13 +24,13 @@ namespace RockPaperScissors
             // 내 입력 값
             switch(myChoice) 
             {
-                case 0:
+                case SCISSORS:
                     Console.WriteLine("당신은 가위를 선택했습니다.");
                     break;
-                case 1:
+                case ROCK:
                     Console.WriteLine("당신은 바위를 선택했습니다.");
                     break;
-                case 2:
+                case PAPER:
                     Console.WriteLine("당신은 보를 선택했습니다.");
                     break;
             }
@@ -32,13 +38,13 @@ namespace RockPaperScissors
             // 컴퓨터 입력 값
             switch(aiChoice)
             {
-                case 0:
+                case SCISSORS:
                     Console.WriteLine("컴퓨터는 가위를 선택했습니다.");
                     break;
-                case 1:
+                case ROCK:
                     Console.WriteLine("컴퓨터는 바위를 선택했습니다.");
                     break; 
-                case 2:
+                case PAPER:
                     Console.WriteLine("컴퓨터는 보를 선택했습니다.");
                     break;
             }
@@ -86,13 +92,13 @@ namespace RockPaperScissors
             if (myChoice == aiChoice)
             {
                 Console.WriteLine("무승부입니다.");
-            } else if (myChoice == 0 && aiChoice == 2)
+            } else if (myChoice == SCISSORS && aiChoice == PAPER)
             {
                 Console.WriteLine("당신의 승리입니다.");
-            } else if (myChoice == 1 && aiChoice == 0)
+            } else if (myChoice == ROCK && aiChoice == SCISSORS)
             {
                 Console.WriteLine("당신의 승리입니다.");
-            } else if (myChoice == 2 && aiChoice == 1)
+            } else if (myChoice == PAPER && aiChoice == ROCK)
             {
                 Console.WriteLine("당신의 승리입니다.");
             } else
